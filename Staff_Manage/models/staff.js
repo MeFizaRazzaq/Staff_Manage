@@ -6,5 +6,8 @@ var staffSchema = mongoose.Schema({
     email:String,
     phone:String,
     Gender:String,
-    Salary:Int16Array,
+    Salary:Number,
 });
+
+const staff= mongoose.model("Staff-Data",staffSchema);
+module.exports= staff;
