@@ -1,0 +1,39 @@
+html 
+head    
+    title Add| Staff 
+    link(rel="stylesheet", href="/stylesheets/style.css")
+body
+  div
+    form(action="", class="container")
+      div.data
+        small First Name
+        input(required, type="text")
+
+      div.data
+        small Last Name
+        input(required, type="text")
+
+      div.data
+        small E-mail
+        input(required, type="text")
+
+      div.Number
+        small Phone Number
+        input(required, type="text")
+
+      div.data(style="display: inline-flex;")
+        small Gender:
+        div.data(style="margin-left: 90px;")
+          small Male
+          input(required, type="radio")
+
+        div.data(style="margin-left: 90px;")
+          small Female
+          input(required, type="radio")
+
+      div.data
+        small Salary
+        input(required, type="text")
+
+      button.btn(type="submit") Submit
+      button(type="reset") Reset
