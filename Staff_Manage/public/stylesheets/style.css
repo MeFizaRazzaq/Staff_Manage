@@ -164,10 +164,7 @@ transition: 100ms;
 }
 .container{
   display: grid;
-  margin-left: 50%;
-  margin-top: 5%;
   padding: 50px;
-  width: 500px;
   align-self: center;
   background-color: #052417;
   color: aliceblue;
@@ -178,9 +175,8 @@ transition: 100ms;
 
 .container2{
   display: grid;
-  margin-left: 35%;
-  margin-top: 5%;
-  padding: 15px;
+  justify-content: center;
+  margin-bottom: 15px;
   width: 900px;
   align-self: center;
   background-color: #052417;
@@ -204,4 +200,11 @@ th, td {
 
 th {
   background-color: #117449;
+}
+
+.btnholder{
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
 }

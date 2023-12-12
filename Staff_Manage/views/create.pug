@@ -2,24 +2,24 @@ html
 head    
     title Add| Staff 
     link(rel="stylesheet", href="/stylesheets/style.css")
-body
-  div
-    form(action="", class="container")
+body(style="grid-template-columns: auto;")
+  .btnholder
+    form(action="/add",method ="post", class="container")
       div.data
         small First Name
-        input(required, type="text")
+        input#fn(required, type="text" ,name="fname")
 
       div.data
         small Last Name
-        input(required, type="text")
+        input#ln(required, type="text" ,name="lname")
 
       div.data
         small E-mail
-        input(required, type="text")
+        input(required, type="text" ,name="mail")
 
       div.Number
         small Phone Number
-        input(required, type="text")
+        input(required, type="text" ,name="phone")
 
       div.data(style="display: inline-flex;")
         small Gender:
@@ -33,7 +33,10 @@ body
 
       div.data
         small Salary
-        input(required, type="text")
+        input(required, type="text" ,name="salary")
 
       button.btn(type="submit") Submit
       button(type="reset") Reset
+    button.submit(type="button", id="add", onclick="window.location.href='/'")  Home
+    button.submit(type="button", id="add", onclick="window.location.href='/show'") Show All
+

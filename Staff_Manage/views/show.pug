@@ -2,7 +2,7 @@ html
 head    
     title Show| Staff 
     link(rel="stylesheet", href="/stylesheets/style.css")
-body
+body(style="grid-template-columns: auto;    justify-items: center; align-content: center; ")
   .container2
     table
       tr
@@ -14,7 +14,6 @@ body
         th Salary
         th Delete
         th Update
-
       tr
         td John
         td Doe
@@ -26,7 +25,6 @@ body
           button(style="padding: 7px;") Delete
         td
           button(style="padding: 7px;") Update
-
       tr
         td John
         td Doe
@@ -38,5 +36,19 @@ body
           button(style="padding: 7px;") Delete
         td
           button(style="padding: 7px;") Update
-
-  script(src="./index.js")
+      each staff in staffs
+        tr 
+          td=staff.firstName
+          td=staff.LastName
+          td=staff.phone
+          td=staff.email
+          td=staff.Gender
+          td=staff.Salary
+          td
+            button(style="padding: 7px;") Delete
+          td
+            button(style="padding: 7px;") Update
+  div
+    button.submit(type="button", id="add", onclick="window.location.href='/'")  Home
+    button.submit(type="button", id="add", onclick="window.location.href='/add'") Add
+script(src="./index.js")
