@@ -23,8 +23,8 @@ const DeleteStaff  = async  (_id)=>{
     return staffmem;
 }
 
-const updateStaff = async (fn,ln,email,phone,gender,salary)=>{
-    console.log("Updated Staff");
+const updateStaff = async (_id,fn,ln,email,phone,gender,salary)=>{
+    console.log("Updated Staff",_id);
     let staffmem = await StaffModel.findById(_id);
     staffmem.firstName = fn;
     staffmem.LastName = ln;

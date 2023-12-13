@@ -9,6 +9,14 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/* GET show page. */
+router.get('/show',async function(req, res, next) {
+  //res.send("Hello from routes");
+  let allStaff = await getAllStaff();
+  console.log("allStaff");
+  res.render('show', { staffs: allStaff });
+});
+
 /* GET add page. */
 router.get('/add',async function(req, res, next) {
   //res.send("Hello from routes");
@@ -24,29 +32,26 @@ router.post('/add',async function(req, res, next) {
   res.redirect('/show');
 });
 
-/* GEt adelete data of index */
+/* GEt delete data of index */
 router.get('/show/delete/:id',async function(req, res, next) {
-  //let mem=req.body;
-  //console.log("Delete Page");
   DeleteStaff(req.params.id);
-  //res.send("Delete ID: "+req.params.id);
   res.redirect('/show');
 });
 
 /* GEt edit data of index */
 router.get('/show/edit/:id',async function(req, res, next) {
-  let staffmem = await updateStaff(req.params.id);
-  //res.send("Update ID: "+req.params.id);
-  console.log("UPdate body:",staffmem );
-  res.render('update');
+  let staffmem = await StaffModel.findById(req.params.id);
+  console.log("UPdate body:", staffmem);
+  res.render('update', {staff:staffmem});
 });
 
-/* GET show page. */
-router.get('/show',async function(req, res, next) {
-  //res.send("Hello from routes");
-  let allStaff = await getAllStaff();
-  console.log("allStaff");
-  res.render('show', { staffs: allStaff });
+/* POST edit data of index */
+router.post('/edit/:id',async function(req, res, next) {
+  let mem=req.body;
+  updateStaff(req.params.id,mem.fname,mem.lname,mem.mail,mem.phone,mem.gender,mem.salary);
+  console.log(" UPdated",mem.fname);
+  res.redirect('/show');
 });
+
 
 module.exports = router;
