@@ -1,0 +1,21 @@
+html
+  head  
+    title Staff|Manage 
+    link(rel="stylesheet", href="/stylesheets/style.css")
+  body(style="overflow: hidden;")
+    section.side
+      img(src="./Images/login.png", alt="Image not Available", class="Img")
+
+    section.main
+      .login-container
+        p.tittle Welcome Page
+        .separator
+        p.welcome-msg Please! Select an Operation
+        form.login-form
+          .form-control
+            button.submit(type="button", id="add", onclick="window.location.href='/add'") Add a staff
+          .form-control
+            button.submit(type="button", id="show", onclick="window.location.href='/show'") Show all Staff
+          
+
+    //script(src="./index.js")

@@ -1,0 +1,41 @@
+html 
+head    
+    title Update | Staff 
+    link(rel="stylesheet", href="/stylesheets/style.css")
+body(style="grid-template-columns: auto;")
+  .btnholder
+    form(action="/edit/"+staff._id,method ="post", class="container")
+      div.data
+        small First Name
+        input#fn(required, type="text" ,name="fname", value=staff.firstName )
+
+      div.data
+        small Last Name
+        input#ln(required, type="text" ,name="lname", value=staff.LastName)
+
+      div.data
+        small E-mail
+        input(required, type="text" ,name="mail", value=staff.email)
+
+      div.Number
+        small Phone Number
+        input(required, type="text" ,name="phone", value=staff.phone)
+
+      div.data(style="display: inline-flex;")
+        small Gender:
+        div.data(style="margin-left: 90px;")
+          small Male
+          input(required, type="radio", name="gender", value="male")
+
+        div.data(style="margin-left: 90px;")
+          small Female
+          input(required, type="radio", name="gender", value="female")
+
+      div.data
+        small Salary
+        input(required, type="text" ,name="salary", value=staff.Salary)
+
+      button.btn(type="submit") Update
+      button(type="reset") Reset
+    button.submit(type="button", id="add", onclick="window.location.href='/'")  Home
+    button.submit(type="button", id="add", onclick="window.location.href='/show'") Show All

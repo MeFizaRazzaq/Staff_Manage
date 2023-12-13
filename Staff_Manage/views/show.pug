@@ -1,0 +1,36 @@
+html 
+  head    
+    title Show| Staff 
+    link(rel="stylesheet", href="/stylesheets/style.css")
+  body(style="grid-template-columns: auto;    justify-items: center; align-content: center; ")
+  .container2
+    table
+      tr
+        th First Name
+        th Last Name
+        th E-mail
+        th Phone Number
+        th Gender
+        th Salary
+        th Delete
+        th Update
+      each staff in staffs
+        tr 
+          td=staff.firstName
+          td=staff.LastName
+          td=staff.email
+          td=staff.phone
+          td=staff.Gender
+          td=staff.Salary
+          td
+            button.submit(type="button", id="add", style="padding: 7px;", 
+            onclick=` window.location.href='/show/delete/${staff._id}'`
+            ) Delete
+          td
+            button.submit(type="button", id="update", style="padding: 7px;", 
+            onclick=` window.location.href='/show/edit/${staff._id}'`
+            ) Update
+  div
+    button.submit(type="button", id="add", onclick="window.location.href='/'")  Home
+    button.submit(type="button", id="add", onclick="window.location.href='/add'") Add
+script(src="./index.js")
