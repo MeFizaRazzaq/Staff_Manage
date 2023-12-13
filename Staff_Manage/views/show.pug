@@ -1,8 +1,8 @@
 html 
-head    
+  head    
     title Show| Staff 
     link(rel="stylesheet", href="/stylesheets/style.css")
-body(style="grid-template-columns: auto;    justify-items: center; align-content: center; ")
+  body(style="grid-template-columns: auto;    justify-items: center; align-content: center; ")
   .container2
     table
       tr
@@ -14,40 +14,22 @@ body(style="grid-template-columns: auto;    justify-items: center; align-content
         th Salary
         th Delete
         th Update
-      tr
-        td John
-        td Doe
-        td johndoe@example.com
-        td (123) 456-7890
-        td Male
-        td $50,000
-        td
-          button(style="padding: 7px;") Delete
-        td
-          button(style="padding: 7px;") Update
-      tr
-        td John
-        td Doe
-        td johndoe@example.com
-        td (123) 456-7890
-        td Male
-        td $50,000
-        td
-          button(style="padding: 7px;") Delete
-        td
-          button(style="padding: 7px;") Update
       each staff in staffs
         tr 
           td=staff.firstName
           td=staff.LastName
-          td=staff.phone
           td=staff.email
+          td=staff.phone
           td=staff.Gender
           td=staff.Salary
           td
-            button(style="padding: 7px;") Delete
+            button.submit(type="button", id="add", style="padding: 7px;", 
+            onclick=` window.location.href='/show/delete/${staff._id}'`
+            ) Delete
           td
-            button(style="padding: 7px;") Update
+            button.submit(type="button", id="update", style="padding: 7px;", 
+            onclick=` window.location.href='/show/edit/${staff._id}'`
+            ) Update
   div
     button.submit(type="button", id="add", onclick="window.location.href='/'")  Home
     button.submit(type="button", id="add", onclick="window.location.href='/add'") Add

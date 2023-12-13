@@ -177,7 +177,7 @@ transition: 100ms;
   display: grid;
   justify-content: center;
   margin-bottom: 15px;
-  width: 900px;
+  width: fit-content;
   align-self: center;
   background-color: #052417;
   color: aliceblue;

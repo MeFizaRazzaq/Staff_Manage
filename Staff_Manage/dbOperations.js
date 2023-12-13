@@ -19,39 +19,53 @@ const getAllStaff = async  ()=>{
 }
 
 const DeleteStaff  = async  (_id)=>{
-    let product = await ProductModel.findByIdAndDelete(_id);
-    return product;
+    let staffmem = await StaffModel.findByIdAndDelete(_id);
+    return staffmem;
 }
+
+const updateStaff = async (fn,ln,email,phone,gender,salary)=>{
+    console.log("Updated Staff");
+    let staffmem = await StaffModel.findById(_id);
+    staffmem.firstName = fn;
+    staffmem.LastName = ln;
+    staffmem.email = email;
+    staffmem.phone = phone;
+    staffmem.Gender = gender;
+    staffmem.Salary = salary;
+    await staffmem.save();
+    return staffmem;
+};
 
 module.exports.createStaff =createStaff;
 module.exports.getAllStaff =getAllStaff;
 module.exports.DeleteStaff =DeleteStaff;
+module.exports.updateStaff =updateStaff;
 /*
 
 
-const updateProduct = async (_id,title,price,tag)=>{
-    console.log("Updated Product");
-    let product = await ProductModel.findById(_id);
-    product.title = title;
-    product.price = price;
-    product.tag = tag;
-    await product.save();
-    return product;
+const updateStaff = async (_id,title,price,tag)=>{
+    console.log("Updated Staff");
+    let Staff = await StaffModel.findById(_id);
+    Staff.title = title;
+    Staff.price = price;
+    Staff.tag = tag;
+    await Staff.save();
+    return Staff;
 };
 
-const DeleteProducts  = async  (_id)=>{
-    let product = await ProductModel.findByIdAndDelete(_id);
-    return product;
+const DeleteStaffs  = async  (_id)=>{
+    let Staff = await StaffModel.findByIdAndDelete(_id);
+    return Staff;
 }
 
-const getAllProducts = async  ()=>{
-    let products = await ProductModel.find();
-    return products;
+const getAllStaffs = async  ()=>{
+    let Staffs = await StaffModel.find();
+    return Staffs;
 }
 
-module.exports.createProduct =createProduct;
-module.exports.getAllProducts =getAllProducts;
-module.exports.DeleteProducts =DeleteProducts;
-module.exports.updateProduct =updateProduct;
+module.exports.createStaff =createStaff;
+module.exports.getAllStaffs =getAllStaffs;
+module.exports.DeleteStaffs =DeleteStaffs;
+module.exports.updateStaff =updateStaff;
 
 */
