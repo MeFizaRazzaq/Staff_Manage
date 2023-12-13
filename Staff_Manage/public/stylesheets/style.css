@@ -29,7 +29,6 @@ section.side{
 section.side img{
   width: 100%;
   max-width: 100%;
-  margin-bottom: 20%;
   margin-right: 0;
   transform: rotate(180deg);
 }
